@@ -1,55 +1,34 @@
-const state = {
-  items: [
-    {
-      id: "001-beetroot",
-      name: "beetroot",
-      price: 0.35
-    },
-    {
-      id: "002-carrot",
-      name: "carrot",
-      price: 0.35
-    },
-    {
-      id: "003-apple",
-      name: "apple",
-      price: 0.35
-    },
-    {
-      id: "004-apricot",
-      name: "apricot",
-      price: 0.35
-    },
-    {
-      id: "005-avocado",
-      name: "avocado",
-      price: 0.35
-    },
-    {
-      id: "006-bananas",
-      name: "bananas",
-      price: 0.35
-    },
-    {
-      id: "007-bell-pepper",
-      name: "bell pepper",
-      price: 0.35
-    },
-    {
-      id: "008-berry",
-      name: "berry",
-      price: 0.35
-    },
-    {
-      id: "009-blueberry",
-      name: "blueberry",
-      price: 0.35
-    },
-    {
-      id: "010-eggplant",
-      name: "eggplant",
-      price: 0.35
-    }
-  ],
-  cart: []
-};
+/* ## Plan
+- Iterate each state items
+- createElemens ('li'), ('div'), ('img'), ('button'). Available in the store-item.html
+- append each element created with store--item-list
+- createElemens ('li'), ('img'), ('p'), ('button') ('span'), ('button'). Available in the cart-item.html
+- append each element created with cart--item-list
+- use addeventListener for the + and - buttons
+- if statement item === 0 then .remove() item from cart
+- function for the sum of item price added in cart - items.price */
+
+const stateItemsUl = document.querySelector(".store--item-list");
+for (let i = 0; i < state.items.length; i++) {
+  const products = state.items[i];
+  console.log(products);
+
+  //create and add an li to ul
+  const storeLi = document.createElement("li");
+  stateItemsUl.append(storeLi);
+
+  //create and add div to ul
+  const storeDiv = document.createElement("div");
+  storeDiv.setAttribute("class", "store--item-icon");
+  storeLi.append(storeDiv);
+
+  //create and add img to ul
+  const storeImg = document.createElement("img");
+  storeImg.src = `assets/icons/${products.id}.svg`;
+  storeDiv.append(storeImg);
+
+  //create and add img to ul
+  const storeBtn = document.createElement("button");
+  storeBtn.innerHTML = "Add to cart";
+  storeLi.append(storeBtn);
+}

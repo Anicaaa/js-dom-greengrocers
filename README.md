@@ -23,3 +23,14 @@ In this exercise we explore a common scenario in eCommerce, adding and removing 
 
 ## Extended 2
 - Add sorting to the store ie. sort by price or sort alphabetically; when a user clicks sort they will see a sorted list of items
+
+
+## Plan
+- Iterate each state items
+- createElemens ('li'), ('div'), ('img'), ('button'). Available in the store-item.html
+- append each element created with store--item-list
+- createElemens ('li'), ('img'), ('p'), ('button') ('span'), ('button'). Available in the cart-item.html
+- append each element created with cart--item-list
+- use addeventListener for the + and - buttons
+- if statement item === 0 then .remove() item from cart
+- function for the sum of item price added in cart - items.price
