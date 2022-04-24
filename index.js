@@ -68,18 +68,31 @@ for (let i = 0; i < state.items.length; i++) {
     cartAddBtn.setAttribute("class", "add-btn");
     cartAddBtn.innerHTML = "+";
     cartUl.append(cartAddBtn);
+
+    //AddEventListener for remove-btn and add-btn
+    let counter = 1;
+
+    const updateNum = document.querySelector(".quantity-text");
+    updateNum.innerText = counter;
+
+    cartRemoveBtn.addEventListener("click", function () {
+      counter--;
+      updateNum.innerText = counter;
+    });
+
+    cartAddBtn.addEventListener("click", function () {
+      counter++;
+      updateNum.innerText = counter;
+    });
+
+    /* Create function to remove product from cart if quantity is 0
+    function removeItem(item) {
+      if (item < 1) {
+        return products.remove();
+      } else {
+        return cartAddBtn;
+      }
+    }
+    removeItem(); */
   });
 }
-/* <li>
-  <img
-    class="cart--item-icon"
-    src="assets/icons/001-beetroot.svg"
-    alt="beetroot"
-  />
-  <p>beetroot</p>
-  <button class="quantity-btn remove-btn center">-</button>
-  <span class="quantity-text center">1</span>
-  <button class="quantity-btn add-btn center">+</button>
-</li> */
-
-//
